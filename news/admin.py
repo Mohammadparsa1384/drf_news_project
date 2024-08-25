@@ -5,7 +5,9 @@ from . import models
 
 @admin.register(models.News)
 class NewsAdmin(admin.ModelAdmin):
-    list_display = ["title","author","body","created"]
+    list_display = ["title","author","list_category","body","created"]
+
+
 
 
 admin.site.register(models.Category)

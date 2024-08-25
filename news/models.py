@@ -16,9 +16,12 @@ class News(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
+    def list_category(self):
+        return "\n".join(cat.title for cat in self.category.all())
+
     def __str__(self) -> str:
         return self.title
 
     class Meta:
-        ordering = ["created","updated"]
+        ordering = ["-created","-updated"]
 
